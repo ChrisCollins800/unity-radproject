@@ -35,11 +35,7 @@ public class playerMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Asteroid")
-        {
-            canvas.SetActive(true);
-            Destroy(gameObject);
-            sfx.Play();
-        }
+        sfx.Play();
+        canvas.SetActive(true);
     }
 }

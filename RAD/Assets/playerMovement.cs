@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cubecontrol : MonoBehaviour
+public class playerMovement : MonoBehaviour
 {
     public float speed = 2;
 

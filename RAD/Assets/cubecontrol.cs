@@ -17,7 +17,7 @@ public class cubecontrol : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            if (transform.position.y < 5.75)
+            if (transform.position.y < 5.80)
             {
                 transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
             }

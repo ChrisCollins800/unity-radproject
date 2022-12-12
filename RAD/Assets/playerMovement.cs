@@ -5,6 +5,8 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     public float speed = 2;
+    public AudioSource sfx;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,17 @@ public class playerMovement : MonoBehaviour
             {
                 transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
             }
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        print("collision");
+        if(collision.transform.tag == "Asteroid")
+        {
+            canvas.SetActive(true);
+            Destroy(this);
+            sfx.Play();
         }
     }
 }

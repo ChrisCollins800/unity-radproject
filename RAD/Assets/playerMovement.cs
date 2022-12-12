@@ -7,11 +7,12 @@ public class playerMovement : MonoBehaviour
     public float speed = 2;
     public AudioSource sfx;
     public GameObject canvas;
+    public bool lost = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        lost = false;
     }
 
     // Update is called once per frame
@@ -37,5 +38,6 @@ public class playerMovement : MonoBehaviour
     {
         sfx.Play();
         canvas.SetActive(true);
+        lost = true;
     }
 }

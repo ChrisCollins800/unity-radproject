@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class cubecontrol : MonoBehaviour
 {
+    public float speed = 2;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -15,9 +17,17 @@ public class cubecontrol : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
- transform.position += Vector3.back*Time.deltaTime;
+            if (transform.position.y < 5.75)
+            {
+                transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
+            }
         }
-       
-        
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            if (transform.position.y > -4)
+            {
+                transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
+            }
+        }
     }
 }
